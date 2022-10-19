@@ -3,35 +3,41 @@
  * @param {number} n
  * @return {ListNode}
  * 
- *  1 -> 2 -> 3 -> 4 -> 5 ,n = ２
- *  f   ->    f    ->   f
- *  s -> s -> s
+ * someone's solution:
+ * set fast & slow pointers and dummy head node, this dummy can help us remove node
+ * then set fast at head node and slow at dummy node
+ *  
+ * let fast pointer move nth node. 
+ * when fast is not null that means fast is not in head's last node pointer, so we can move fast & slow node
  * 
- *  1 -> 2 n = 1
- *  f -> f 
- *  s -> s
- *  above this example , we can find if fast pointer every time move n until fast is null or fast n next has null
- * then let s pointer next to be s.next.next, represent remove nth node
+ * if fast is null, it's represent slow's next node will remove
+ *    
+ * why slow move from dummy node?
+ * if we move from head first node, we can't remove first node forever.
+ * moreover, if we remove nth node , it means slow must at n - 1 node location, otherwise, it can't change next pointer 
+ *
+ *  dummy -> 1 -> 2 -> 3 -> 4 -> 5 , n = ２
+ *           f   --->  f -> f -> f -> f
+ *     s -> s -> s -> s -> remove        
  * 
- * difficult: 
+ *  dummy -> 1 -> 2 , n = 1
+ *    f      ->   f -> f
+ *    s   -> s -> remove
+ * 
+ * other solutions may next time to do
  */
 var removeNthFromEnd = function (head, n) {
-    let fast = head, slow = head
-    let count = 0
-    while (fast !== null) {
-        while (count < n && fast !== null) {
-            fast = fast.next
-            count++
-        }
-        if (fast !== null) {
-            slow = slow.next
-        }
-        count = 0
+    let dummy = new ListNode()
+    dummy.next = head
+    let fast = head, slow = dummy
+    for (let i = 0; i < n; i++) {
+        fast = fast.next
     }
-    if (slow && slow.next !== null) {
-        slow.next = slow.next.next
-    } else {
 
+    while (fast) {
+        fast = fast.next
+        slow = slow.next
     }
-    return head
+    slow.next = slow.next.next
+    return dummy.next
 };
