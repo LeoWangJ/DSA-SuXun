@@ -2,15 +2,18 @@
  * @param {number[][]} points
  * @param {number} k
  * @return {number[][]}
+ * 
+ * 實作一個最大堆，其中值使用平方相加的距離即可，與 offer 40. 思路相同
+ * 
  */
 var kClosest = function (points, k) {
     let len = points.length
     if (k > len) return points
     const heap = new MaxHeap(points.slice(0, k))
     for (let i = k; i < len; i++) {
-        if (square(heap.top()) > square(arr[i])) {
+        if (square(heap.top()) > square(points[i])) {
             heap.extract()
-            heap.insert(arr[i])
+            heap.insert(points[i])
         }
     }
     return heap.container
@@ -31,7 +34,7 @@ class MaxHeap {
         let index = container.length - 1
         while (index) {
             let parent = Math.floor((index - 1) / 2)
-            if (square(container[index]) < square(container[parent])) {
+            if (square(container[index]) <= square(container[parent])) {
                 break
             }
             swap(container, index, parent)
@@ -68,7 +71,8 @@ class MaxHeap {
 }
 
 function square(data) {
-    return Math.abs(data[0] * 2) + Math.abs(data[1] * 2)
+    if (!data) return
+    return Math.sqrt(Math.abs(data[0] * data[0]) + Math.abs(data[1] * data[1]))
 }
 
 function swap(arr, i, j) {
