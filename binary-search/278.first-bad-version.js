@@ -6,6 +6,9 @@
  * 1. 若 isBadVersion(mid) 為 true 代表第一個錯誤的值在 (1 ~ mid)
  * 2. 若 isBadVersion(mid) 為 false 代表第一個錯誤的值在 (mid + 1 ~ n)
  * 3. 最終跳出循環後 left = right 即為第一個錯誤的版本
+ * 
+ * 1. 2022/11/3
+ * 2. 2022/11/18
  */
 var solution = function (isBadVersion) {
     return function (n) {

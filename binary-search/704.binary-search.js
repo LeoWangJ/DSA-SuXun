@@ -9,6 +9,9 @@
  * 3. 若目標值大於中間值，則可以刪除中間值之前的元素 mid +1
  * 
  * time complexity O(logn)
+ * 
+ * 1. 2022/11/3
+ * 2. 2022/11/18
  */
 var search = function (nums, target) {
     let size = nums.length

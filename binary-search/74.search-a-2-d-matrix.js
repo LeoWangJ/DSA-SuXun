@@ -11,6 +11,11 @@
  *  求到 mid 時，需要找出 mid 的列與行 
  *  列 : mid / n
  *  行 : mid % n
+ * 
+ * 1. 2022/11/04
+ * 2. 2022/11/18
+ * 
+ * 
  */
 var searchMatrix = function (matrix, target) {
     let m = matrix.length, n = matrix[0].length
