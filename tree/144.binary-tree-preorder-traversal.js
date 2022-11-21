@@ -1,6 +1,8 @@
 /**
  * recursion 
  * 
+ * 1. 2022/10/24
+ * 2. 2022/11/21 (忘記迭代法)
  */
 var preorderTraversal = function (root) {
     let result = []

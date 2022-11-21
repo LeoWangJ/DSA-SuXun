@@ -2,6 +2,9 @@
  * left -> right -> result
  * 1. use recursion
  * 
+ * 
+ * 1. 2022/10/24
+ * 2. 2022/11/21 (迭代法已忘)
  */
 var postorderTraversal = function (root) {
     let result = []

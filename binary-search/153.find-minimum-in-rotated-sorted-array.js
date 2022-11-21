@@ -9,6 +9,9 @@
  * ex:
  * 中間值 < 右邊值 , 代表最小值在 左邊值 ~ 中間值，所以將 right = mid
  * 中間值 > 右邊值 , 代表最小值在 中間值 ~ 右邊值，所以將 left = mid + 1 (中間值不可能為最小，所以 + 1)
+ * 
+ * 1. 2022/11/04
+ * 2. 2022/11/21
  */
 var findMin = function (nums) {
     let left = 0, right = nums.length - 1
