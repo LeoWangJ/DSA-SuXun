@@ -11,7 +11,8 @@
  * p equal null & q equal null, represent that all null node, so need to return true
  * 
  * time complexity O(n)
- * 
+ * 1. 2022/10/27
+ * 2. 2022/12/21 (思路正確, 但是忘了 p === null && q === null 是要回傳 true, 代表兩個都是空節點)
  */
 var isSameTree = function (p, q) {
     function recursion(p, q) {

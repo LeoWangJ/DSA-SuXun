@@ -23,6 +23,9 @@ var isBalanced = function (root) {
 /**
  * bottom to up
  * https://leetcode.cn/problems/balanced-binary-tree/solution/shu-ju-jie-gou-he-suan-fa-ping-heng-er-c-ckkm/
+ * 
+ * 1. 2022/10/25
+ * 2. 2022/11/22 (看題解才有思路)
  */
 var isBalanced = function (root) {
     const UNBALANCE = -1

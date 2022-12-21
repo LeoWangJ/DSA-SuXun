@@ -3,6 +3,11 @@
  * @return {boolean}
  * 
  * Follow up: Could you solve it both recursively and iteratively?
+ * https://leetcode.cn/problems/symmetric-tree/solution/dong-hua-yan-shi-101-dui-cheng-er-cha-shu-by-user7/
+ * 
+ * 1. 2022/11/02 
+ * 2. 2022/12/21 (深度思路可以, 廣度已經遺忘)
+ * 
  * 
  * 1. 深度遍歷，題目為鏡像，左子樹與右子樹的節點需要交換判斷是否相同
  */
